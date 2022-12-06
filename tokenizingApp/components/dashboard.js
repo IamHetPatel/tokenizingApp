@@ -1,46 +1,44 @@
-// components/dashboard.js
-import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
-export default class Dashboard extends Component {
+import React, { Component } from "react";
+
+import { Header } from "@react-navigation/elements";
+import { Text, View, StyleSheet, StatusBar } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { Button, IconButton } from "react-native-paper";
+
+export default class Dashboard extends Component{
   constructor() {
     super();
-    this.state = { 
-      user: ''
-    }
+    this.state = {
+    };
   }
-  signOut = () => {
-  }  
+  updateInputVal = (val, prop) => {
+    const state = this.state;
+    state[prop] = val;
+    this.setState(state);
+  };
   render() {
-    this.state = { 
-    //   displayName: 
-    //   firebase.auth().currentUser.displayName,
-    //   uid: firebase.auth().currentUser.uid
-    }    
-    return (
+    this.state = {}
+  return (
+    <SafeAreaProvider>
       <View style={styles.container}>
-        <Text style = {styles.textStyle}>
-          Hello, {this.state.username}
-        </Text>
+        <Header label="Tokenizer" />
+        <StatusBar barStyle={"dark-content"} />
         <Button
-          color="#3740FE"
-          title="Logout"
-          onPress={() => this.props.navigation.navigate("signup")}
-        />
+          onPress={() => this.props.navigation.navigate("Listing")}
+          title="NextScreen"
+        >
+          click</Button>
       </View>
-    );
-  }
+      
+    </SafeAreaProvider>
+  );
+};
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    display: "flex",
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 35,
-    backgroundColor: '#fff'
+    alignItems: "center",
+    backgroundColor: "#6c5e7",
   },
-  textStyle: {
-    fontSize: 15,
-    marginBottom: 20
-  }
 });

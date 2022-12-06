@@ -27,7 +27,13 @@ export default class Signup extends Component {
     state[prop] = val;
     this.setState(state);
   };
-  registerUser = () => {
+
+  functino =({navigation})=>{
+    this.registerUser();
+    navigation.navigate("dashboard");
+  }
+
+  registerUser = ({navigation}) => {
     if (this.state.email === "" && this.state.password === "") {
       Alert.alert("Enter details to signup!");
     } else {
@@ -71,7 +77,7 @@ export default class Signup extends Component {
       };
 
       fetch(
-        "http://web-production-eedc.up.railway.app/users/register",
+        "https://web-production-eedc.up.railway.app/users/register",
         requestOptions
       )
         .then((response) => response.text())

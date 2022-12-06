@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "tokenizingApp",
+    "description": "my project app",
     "slug": "tokenizingApp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,6 +22,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.tokenizingApp",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -28,6 +30,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "82acc397-6110-4e93-991d-67159540b5b3"
+      }
     }
   }
 }
